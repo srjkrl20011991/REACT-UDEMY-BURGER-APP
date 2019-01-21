@@ -34,7 +34,6 @@ const Order = (props) =>{
 
     return(
         <div className={classes.Order}>
-            <p>Customer Name: {props.customer.name}</p>
             <p>Ingredients: {ingredientsOutput}</p>
             <p>Price: <strong>USD {Number.parseFloat(props.price)}</strong></p>
         </div>
