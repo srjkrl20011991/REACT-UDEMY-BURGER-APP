@@ -4,8 +4,14 @@ import {connect} from 'react-redux';
 import Order from '../../components/Order/Order';
 import axios from '../../axios-orders';
 import withErrorHandler from '../../hoc/withErrorhandler/withErrorhandler';
-import * as actions from '../../store/actions/index';
+// import * as actions from '../../store/actions/index';
+
+import {fetchOrders} from '../../store/actions/order';
+import {deleteOrder} from '../../store/actions/order';
+
+
 import Spinner from '../../components/UI/Spinner/Spinner';
+import { bindActionCreators } from 'redux';
 
 class Orders extends Component {
 
@@ -32,7 +38,7 @@ class Orders extends Component {
         //     .catch(err =>{
         //         this.setState({loading: false});
         //     })
-        this.props.onFetchOrders();
+        this.props.fetchOrders();
            
     }
 
@@ -43,7 +49,6 @@ class Orders extends Component {
     }
 
     render() {
-    
             let orders = <Spinner />;
             if(!this.props.loading){
                 orders =  this.props.orders.map( order => (
@@ -67,16 +72,23 @@ class Orders extends Component {
 ///state.order is order reducer
 export const mapStateToProps =(state) =>{
     return {
-        orders: state.order.orders,
-        loading: state.order.loading
+        orders: state.orderReducer.orders,
+        loading: state.orderReducer.loading
     }
 }
 
-export const mapDispatchToProps = (dispatch) =>{
-     return {
-        onFetchOrders : () =>{dispatch(actions.fetchOrders())},
-        deleteOrder : (id) => {dispatch(actions.deleteOrder(id))}
-    }
+// export const mapDispatchToProps = (dispatch) =>{
+//      return {
+//         onFetchOrders : () =>{dispatch(actions.fetchOrders())},
+//         deleteOrder : (id) => {dispatch(actions.deleteOrder(id))}
+//     }
+// }
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        fetchOrders,
+        deleteOrder
+    },dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (withErrorHandler(Orders, axios));

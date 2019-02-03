@@ -9,3 +9,9 @@ export {
     fetchOrders,
     deleteOrder
 } from './order';
+
+export {
+    addUser,
+    openUserModal,
+    getUsers
+} from './userActions';

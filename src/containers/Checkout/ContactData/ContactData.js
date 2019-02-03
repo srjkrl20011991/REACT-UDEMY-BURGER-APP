@@ -173,8 +173,8 @@ class ContactData extends Component {
         }
 
         let form = (
-            <form onSubmit={this.orderHandler}>
-            
+            // <form onSubmit={this.orderHandler}>
+            <form>
             {formElementArray.map( formElement =>(
                 <Input 
                     key={formElement.id}    
@@ -187,7 +187,12 @@ class ContactData extends Component {
                     changed={(event) => this.inputChangedHandler(event, formElement.id)}
                     />
             ))}
-            <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
+            <Button 
+                btnType="Success" 
+                color="primary"
+                disabled={!this.state.formIsValid} 
+                clicked={this.orderHandler}
+            >ORDER</Button>
             
         </form>
         );
@@ -206,9 +211,9 @@ class ContactData extends Component {
 
 const mapStateToProps = state =>{
     return {
-        ings : state.burgerBuilder.ingredients,
-        price: state.burgerBuilder.totalPrice,
-        loading: state.order.loading
+        ings : state.burgerBuilderReducer.ingredients,
+        price: state.burgerBuilderReducer.totalPrice,
+        loading: state.orderReducer.loading
     }
 }
 

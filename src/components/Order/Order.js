@@ -42,10 +42,12 @@ const Order = (props) =>{
                     <p>Price: <strong>USD {Number.parseFloat(props.price.toFixed(2))}</strong></p>
                 </div>
                 <div className={classes.width50}>
-                    <Button style={{float:"right"}}
+                    <Button  
+                        color="secondary" 
+                        style={{float:"right"}}
                         btnType="Danger"
                         clicked={props.deleteOrder}
-                        >Delete Order</Button>
+                    >Delete Order</Button>
                 </div>
         </div>
     );

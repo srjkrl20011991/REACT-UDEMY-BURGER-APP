@@ -8,11 +8,11 @@
     padding: 10px;
     margin: 10px;
     font-weight: bold;
+    margin: 5px !important;
 }
 
 .Button:first-of-type {
-    margin-left: 0;
-    padding-left: 0;
+    margin-left: 5px;
 }
 
 .Success {
