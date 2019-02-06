@@ -5,6 +5,7 @@ import Button from '../../components/UI/Button/Button';
 import classes from './Auth.css';
 
 class Auth extends Component{
+  //add state controls with email and validation rules
   state = {
     controls: {
       email: {
