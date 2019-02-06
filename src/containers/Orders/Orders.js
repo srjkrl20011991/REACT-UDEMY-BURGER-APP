@@ -45,7 +45,7 @@ class Orders extends Component {
     deleteOrder = (orderid) =>{
         console.log("delete Order",orderid);
         this.props.deleteOrder(orderid);
-        this.props.onFetchOrders();
+        this.props.fetchOrders();
     }
 
     render() {
