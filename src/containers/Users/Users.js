@@ -9,6 +9,7 @@ import Button from '../../components/UI/Button/Button';
 import UserSummary from '../../components/User/UserSummary/UserSummary';
 import { bindActionCreators } from 'redux';
 import {openUserModal,getUsers} from '../../store/actions/userActions';
+import Grid from '../../components/Grid/Grid';
 
 class Users extends Component{
 
@@ -33,7 +34,7 @@ class Users extends Component{
     render(){
         let userSummary = null;
         userSummary = <UserSummary />
-        console.log("this.props.users$",this.props.users$);
+    //    console.log("this.props.users$",this.props.users$);
 
         return(
         <Aux>
@@ -45,6 +46,8 @@ class Users extends Component{
                 <Button 
                     color="primary"
                     clicked={this.addUser}>Add User</Button>
+
+                    <Grid />
                 
                
             </div>
