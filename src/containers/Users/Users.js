@@ -16,6 +16,7 @@ class Users extends Component{
         loading:true,
     }
 
+    
     addUser = () =>{
         this.props.openUserModal();
     }
