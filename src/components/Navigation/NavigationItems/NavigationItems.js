@@ -9,6 +9,8 @@ const navigationItems = () => (
         <NavigationItem link="/orders">Orders</NavigationItem>
         <NavigationItem link="/auth">Authenticate</NavigationItem>
         <NavigationItem link="/users">Users</NavigationItem>
+        <NavigationItem link="/demo">Demo</NavigationItem>
+        <NavigationItem link="/demoreduxform">DemoReduxForm</NavigationItem>
     </ul>
 );
 
