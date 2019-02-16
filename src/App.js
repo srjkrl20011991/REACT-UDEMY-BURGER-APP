@@ -8,6 +8,8 @@ import Checkout from './containers/Checkout/Checkout';
 import Orders from './containers/Orders/Orders';
 import Auth from './containers/Auth/Auth';
 import Users from './containers/Users/Users';
+import Demo from './components/Demo/Demo';
+import DemoReduxForm from './components/DemoReduxForm/DemoReduxForm';
 
 class App extends Component {
 
@@ -17,6 +19,8 @@ class App extends Component {
           <Layout>
             {/* SWITCH LOAD ONE OF THESE ROUTE */}
             <Switch>
+              <Route path="/demoreduxform" component={DemoReduxForm}/>
+              <Route path="/demo" component={Demo}/>
               <Route path="/users" component={Users}/>
               <Route path="/checkout" component={Checkout}/>
               <Route path="/orders" component={Orders}/>
