@@ -14,10 +14,10 @@ import Grid from '../../components/Grid/Grid';
 class Users extends Component{
 
     state = {
-        loading:true,
+        loading:true
     }
 
-    addUser = () =>{
+    addUser = () => {
         this.props.openUserModal();
     }
 
